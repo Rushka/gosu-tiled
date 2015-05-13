@@ -2,10 +2,10 @@ module Gosu
   module Tiled
     class Layers
       include Enumerable
-      def initialize(window, data, options)
+      def initialize(window, data, orientation, options)
         @window = window
         @layers = data.map do |layer|
-          Layer.new(window, layer, options)
+          entity_init(orientation).new(window, layer, options)
         end
       end
 
@@ -28,6 +28,14 @@ module Gosu
           else
             yield layer
           end
+        end
+      end
+
+      def entity_init(orientation)
+        if orientation == 'isometric'
+          Isometric
+        else
+          Layer
         end
       end
     end
