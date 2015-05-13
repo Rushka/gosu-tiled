@@ -4,6 +4,7 @@ require 'gosu_tiled/version'
 require 'gosu_tiled/empty_tile'
 require 'gosu_tiled/tilesets'
 require 'gosu_tiled/layer'
+require 'gosu_tiled/isometric'
 require 'gosu_tiled/layers'
 require 'gosu_tiled/map'
 
